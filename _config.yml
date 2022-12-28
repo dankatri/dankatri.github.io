@@ -50,7 +50,7 @@ round-avatar: true
 # Select the social network links that you want to show in the footer.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
+  # email: "someone@example.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
   github: dankatri
   twitter: dankatri
@@ -105,7 +105,7 @@ feed_show_excerpt: true
 feed_show_tags: true
 
 # Add a search button to the navbar
-post_search: true
+post_search: false
 
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
 edit_page_button: true

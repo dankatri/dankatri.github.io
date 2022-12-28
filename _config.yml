@@ -21,7 +21,7 @@ author: Dan Katri
 
 navbar-links:
   About: "aboutme"
-  Now: : "now"
+  Now: "now"
   Resources:
     - Twitter: "https://twitter.com/dkatri"
     - Mastodon: "https://mastodon.social/@dkatri"

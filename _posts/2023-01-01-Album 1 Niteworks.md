@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: 52 Albums in 2023 - \#1 Niteworks - Air Fàir an Là
+title: 52 Albums in 2023 - #1 Niteworks - Air Fàir an Là
 tags: music, 52 Albums
 ---
 

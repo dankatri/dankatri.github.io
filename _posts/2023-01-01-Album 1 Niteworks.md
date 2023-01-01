@@ -2,9 +2,8 @@
 layout: post 
 title: 52 Albums in 2023 - #1 Niteworks - Air Fàir an Là
 tags: music, 52 Albums
+thumbnail-image: /assets/img/Albums-2023/Niteworks.jpg
 ---
-
-![Niteworks](/images/Albums-2023/Niteworks.jpg)
 
 The first album of the year is one that I had never heard of before.
 

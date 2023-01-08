@@ -13,4 +13,5 @@ The list of 52 has been shuffled and I'll grab a new one each Sunday, and spend 
 
 I'm excited to fall back in love with music after neglecting it for so long, and In the process pick up a load of new music to enjoy.
 
-- [#1 Niteworks - Air Fàir an Là](/2023-01-01-Album-1-Niteworks/)
+- [#1 Niteworks - Air Fàir an Là](/2023-07-01-Niteworks/)
+- [#2 Pale Waves - Unwanted](/2023-08-01-Album-2-Pale-Waves/)

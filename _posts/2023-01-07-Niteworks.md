@@ -11,6 +11,8 @@ Niteworks are not someone I'd heard before, and the genre it lives in is not som
 
 I enjoyed this more than I expected to. Air Fàir an Là is an album that for me made really good background listening while working. I generally like instrumental stuff for that, and lyrics in a language I don't understand might as well be instrumental.
 
+Highlight track is the moody Iain McGee's, which has a sick bagpipe solo in the middle of the song.
+
 I'll definitely be giving some more of Nitework's back catalogue a go.
 
 ★★★☆☆

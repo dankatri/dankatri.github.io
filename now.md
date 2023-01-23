@@ -2,6 +2,21 @@
 ---
 # Now
 
+## January 2023
+
+### Culture 
+
+* **Reading 📕** 
+   * [Humankind](https://amzn.to/3J7yDBt) - A hopeful history is what this book bills itself as, and it is nice considering the times we live in, to hear that maybe humanity isn't completely awful afterall. 
+   * [Yearbook](https://amzn.to/3H0fLlc) - Seth Rogan's memoirs is I guess how I'd describe this. It's funny and there's some insight into what goes into making the funny stuff that Rogan has made over the years. I listened to the audiobook, and I think it's the best way to enjoy the book, the perfomance adds a lot. 
+
+* **Listening to 🎧**
+	* This year I'm making an effort to increase my music listening. You can check in on the progress of this as I work my way through a different album each week in my [52 Albums project](/Albums-2023/).
+   
+
+### Life
+   * Big change for me at the end of January this year. I'm leaving my current job after just over 3 years, to start a new one at GitHub. I'm incredibly excited to get going!
+
 ## May 2021
 
 ### Culture 

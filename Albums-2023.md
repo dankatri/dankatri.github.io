@@ -14,4 +14,5 @@ The list of 52 has been shuffled and I'll grab a new one each Sunday, and spend 
 I'm excited to fall back in love with music after neglecting it for so long, and In the process pick up a load of new music to enjoy.
 
 - [#1 Niteworks - Air Fàir an Là](/2023-01-07-Niteworks/)
-- [#2 Pale Waves - Unwanted](/2023-01-08-Album-2-Pale-Waves/)
+- [#2 Pale Waves - Unwanted](/2023-01-14-Pale-Waves/)
+- [#3 Sons of Kemet](/2023-01-21-Sons-of_Kmet/)

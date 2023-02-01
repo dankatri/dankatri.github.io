@@ -9,4 +9,4 @@ thumbnail-image: /images/Albums-2023/soccer-mommy.jpg
 ![Soccer Mommy](/images/Albums-2023/soccer-mommy.jpg)
 
 
-Another new artist and new album
+Another new artist and new album. Not sure what to expect from this. 

@@ -13,6 +13,8 @@ The list of 52 has been shuffled and I'll grab a new one each Sunday, and spend 
 
 I'm excited to fall back in love with music after neglecting it for so long, and In the process pick up a load of new music to enjoy.
 
+I'll be adding the albums to a playlist as the year goes on, you can listen to them here: [Apple Music](https://music.apple.com/gb/playlist/52-albums-in-2023/pl.u-PRM6tLGZb69) [Spotify](https://open.spotify.com/playlist/6B159AmdyVkoy1j8H66c2X?si=60a6fd66f2994584)
+
 - [#1 Niteworks - Air Fàir an Là](/2023-01-07-Niteworks/)
 - [#2 Pale Waves - Unwanted](/2023-01-14-Pale-Waves/)
 - [#3 Sons of Kemet](/2023-01-21-Sons-of_Kmet/)

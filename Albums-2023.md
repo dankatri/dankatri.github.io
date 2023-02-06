@@ -16,3 +16,5 @@ I'm excited to fall back in love with music after neglecting it for so long, and
 - [#1 Niteworks - Air Fàir an Là](/2023-01-07-Niteworks/)
 - [#2 Pale Waves - Unwanted](/2023-01-14-Pale-Waves/)
 - [#3 Sons of Kemet](/2023-01-21-Sons-of_Kmet/)
+- [#4 Watchhouse - Blindfaller](/2023-01-28-Watchhouse/)
+- [#5 Soccer Mommy - Sometimes, Forever](/2023-02-05-SoccerMommy/)

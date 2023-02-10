@@ -2,6 +2,12 @@
 title: Today I Learned
 ---
 
+**9/2/23:**
+- [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) invented Linux and named it after himself, he also named git after himself as he is a bit of a git 
+
+**1/2/23:**
+- 1 in 29 people in Cheltenham are millionaires
+
 **17/1/23:**
 - the first Ska song was called Easy Snappin and was recorded in Jamaica when people who ran Jamaican sound systems couldn't get their hands on American R&B records anymore. 
 

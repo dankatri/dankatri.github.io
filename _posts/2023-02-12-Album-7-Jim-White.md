@@ -8,6 +8,7 @@ thumbnail-image: /images/Albums-2023/jim-white.jpg
 
 ## Jim White Presents Music From Searching For The Wrong-eyed Jesus
 
+![Jim White](/images/Albums-2023/jim-white.jpg)s
 
 One of the more esoteric albums on the list. 
 

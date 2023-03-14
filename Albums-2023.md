@@ -24,3 +24,4 @@ I'll be adding the albums to a playlist as the year goes on, you can listen to t
 - [#7 Jim White Presents Music From Searching For The Wrong-eyed Jesus](/2023-02-18-Jim-White/)
 - [#8 Hollywood Undead - Five](/2023-02-18-Hollywood-Undead/)
 - [#9 Chase and Status - No More Idols](/2023-02-26-Chase-and-Status/)
+- [#10 Kendrick Lamar - Good Kid, M.A.A.D City](/2023-03-11-Kendrick-Lamar/)

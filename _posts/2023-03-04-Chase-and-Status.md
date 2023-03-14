@@ -3,7 +3,7 @@ layout: post
 title: >
     Hollywood Undead - Five
 tags: music, 52 Albums
-thumbnail-image: /images/Albums-2023/hollywood-undead.jpg
+thumbnail-image: /images/Albums-2023/chase-status.jpg
 ---
 
 ## Chase and Status - No More Idols 

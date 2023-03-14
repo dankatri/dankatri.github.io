@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: >
-    52 Albums in 2023 - # 10
+    52 Albums in 2023 - #11
 tags: music, 52 Albums
 thumbnail-image: /images/Albums-2023/bloc-party.jpg
 ---

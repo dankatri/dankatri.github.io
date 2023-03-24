@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: >
-    52 Albums in 2023 - #
+    52 Albums in 2023 - #9
 tags: music, 52 Albums
 thumbnail-image: /images/Albums-2023/chase-status.jpg
 ---

@@ -26,4 +26,4 @@ I'll be adding the albums to a playlist as the year goes on, you can listen to t
 - [#9 Chase and Status - No More Idols](/2023-02-26-Chase-and-Status/)
 - [#10 Kendrick Lamar - Good Kid, M.A.A.D City](/2023-03-11-Kendrick-Lamar/)
 - [#11 Bloc Party - Silent Alarm](/2023-03-18-Bloc-Party/)
-- [#13 Turnstile - Step 2 Rhythm](/2023-03-25-Turnstile-Step/)
+- [#12 Turnstile - Step 2 Rhythm](/2023-03-25-Turnstile-Step/)

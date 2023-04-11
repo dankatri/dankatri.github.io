@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: >
-    Bloc Party - Silent Alarm
+    Turnstile - Step 2 Rhythm
 tags: music, 52 Albums
 thumbnail-image: /images/Albums-2023/turnstile-step.jpg
 ---

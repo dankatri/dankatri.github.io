@@ -29,3 +29,5 @@ I'll be adding the albums to a playlist as the year goes on, you can listen to t
 - [#12 Turnstile - Step 2 Rhythm](/2023-03-25-Turnstile-Step/)
 - [#13 Natasha Bedingfield - Unwritten](/2023-04-01-Natasha-Bedingfield/)
 - [#14 Joanna Newsom - Have One on Me](/2023-04-08-Joanna-Newsom/)
+- [#15 Sam Cooke - Ain't That Good News](/2023-04-15-Sam-Cooke/)
+- [#16 Tigran Hamasayan - The Call Within](/2023-04-22-Tigran-Hamasyan/)

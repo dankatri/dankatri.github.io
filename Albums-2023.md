@@ -31,3 +31,8 @@ I'll be adding the albums to a playlist as the year goes on, you can listen to t
 - [#14 Joanna Newsom - Have One on Me](/2023-04-08-Joanna-Newsom/)
 - [#15 Sam Cooke - Ain't That Good News](/2023-04-15-Sam-Cooke/)
 - [#16 Tigran Hamasayan - The Call Within](/2023-04-22-Tigran-Hamasyan/)
+- [#17 Royal Blood - Royal Blood](/2023-05-6-Royal-Blood/)
+- [#18 Elbow - The Seldom Seen Kid](/2023-05-06-Elbow/)
+- [#19 Trivium - Ascendancy](/2023-05-13-Trivium/)
+- [#20 Hozier - Waste Land, Baby!](/2023-05-20-Hozier/)
+- [#21 The 1975 - The 1975](/2023-05-27-The1975/)

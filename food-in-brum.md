@@ -34,7 +34,6 @@ __There are a lot of really good pizza places in Birmingham now - so it gets it'
 - [__Rudy's__](https://www.rudyspizza.co.uk/birmingham/) - Maybe the best base of any pizza in Brum. Pretty well priced. They don't do dips for your crusts. I really wish they did.
 - [__Otto__](http://ottowoodfired.com/) - Wood fired pizza in the JQ.
 - [__Baked In Brick__](https://bakedinbrick.co.uk/) - also wood fired pizza, but in Digbeth.
-- [__Dough @ Digbrew__](https://digbrewco.com/dough/) - As well as excellent beer Digbrew has some of the nicest pizza in Brum. Also they have bottomless pizza on a Thursday for £10 which is a steal.
 
 ### Coffee
 
@@ -72,4 +71,5 @@ __There are a lot of really good pizza places in Birmingham now - so it gets it'
 - 18/81 - my favourite cocktail bar in Birmingham. Unique and amazing cocktails.
 - Digbrew - Smallish brewery that open up and do a taproom Friday and Saturday, in my opinion some of the best beer coming out of Birmingham at the moment. They also serve great pizza.
 - Island bar - cocktails and dancing
+- [__Dough @ Digbrew__](https://digbrewco.com/dough/) - As well as excellent beer Digbrew has some of the nicest pizza in Brum. Also they have bottomless pizza on a Thursday for £10 which is a steal.
 

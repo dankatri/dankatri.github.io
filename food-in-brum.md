@@ -18,8 +18,7 @@ Over the last few years Birmingham's food and drink scene has gone mad. There ar
 - [__Medicine bakery__](http://www.medicinebakery.co.uk/) - cronuts and delicious cakes, occasionally have a art exhibition on.
 - [__Wayland's yard__](https://www.waylandsyard.com/birmingham) - nice coffee, good for brunch. Eggy crumpets with halloumi and bacon. Sounds a bit odd but it's worth a shot.
 - [__Red Lion__](http://theredlionbirmingham.com/) - lovely Sunday roasts, though maybe *too* much food. 
-- [__Rico Libre__](http://www.ricolibre.co.uk/) - one of the hidden gems, doesn't look like much but they do amazing tapas. It's also BYOB - another where you're probably best to book
-- [__Kilder__](https://www.kilderbar.co.uk/) - next to Original Patty Men, run by the same people. Specialises in natural wine and craft beer. Cheese toasties are out of this world good. 
+- [__Kilder__](https://www.kilderbar.co.uk/) - next to Original Patty Men, run by the same people. Specialises in natural wine and craft beer. Cheese toasties are out of this world good. On certain nights they do Detroit style pizza that's awesome.
 - [__Tiger Bites Pig__](https://tigerbitespig.co.uk) - A small Bao and rice bowl spot right next to new street station. The Bao is a must try. It's made fresh everyday!
 - [__Sabai Sabai__](https://www.sabaisabai.com/) - Thai food done well. Bit on the spendy side. Set meals are a good deal.
 - [__Eat Vietnam__](https://www.instagram.com/eat_vietnam/) - small Stirchley resturant that does authentic Vietnamese food. The pork is a must try as is the Vietnamese coffee.
@@ -37,31 +36,40 @@ __There are a lot of really good pizza places in Birmingham now - so it gets it'
 - [__Baked In Brick__](https://bakedinbrick.co.uk/) - also wood fired pizza, but in Digbeth.
 - [__Dough @ Digbrew__](https://digbrewco.com/dough/) - As well as excellent beer Digbrew has some of the nicest pizza in Brum. Also they have bottomless pizza on a Thursday for £10 which is a steal.
 
+### Coffee
+
+#### City Centre 
+- Faculty Coffe - really small cafe a stones throw away from Grand Central. In my opinion the best cup of coffee in Brum.
+- Yorks - also very close to Grand Central, and as well as doing banging food, they do brilliant coffee.
+- The Coffee Bar - another small place that does banging coffee, the guest beans are normally worth a try.
+- Ngopi - Indonesian coffee shop. They roast everything in house. The standard coffee is good but they so specialty coffee that is well worth giving a chance. Try the Es Kopi Susu, it's a sweet iced coffee withcondensed milk. Not something you'll get anywhere else in Brum (as far as I know)
+- Quarter Horse Coffee - it's a little out of the way but it's worth the walk. They roast their own coffee and even sell bags of beans to take away. 
+
+#### South Brum
+- Pause - my go to shop. Best coffee, banging cakes and bakes.
+- Flock - located in the back of Grace + James. Consistently very good coffee.
+- CanEat - as well as good brunch food they do a good coffee.
+
 ## Drink
-- Digbrew - Smallish brewery that open up and do a taproom Friday and Saturday, in my opinion some of the best beer coming out of Birmingham at the moment. They also serve great pizza.
+- The Wellington - an old man ale pub in the middle of town. I love it here. 
+- Passing Fancies - recently named 3rd best cocktail bar in the UK. Great vibes and delicious drinks
+- Lucky7 - Eastern inspired cocktails from a genuine cocktail genius. Some of the best most unique cocktails you'll find. 
 - 40 St Pauls - Voted best gin bar in the world. Crazy selection of gin, and they really know thier shit. Expensive but worth it. Best to book.
 - Glasshouse Tap - Out on an industrial estate in Stirchley, bit of a weird one to get to but the beer is worth the trip! Much nicer than the average tap room. 
 - Attic Brew Co. - Out in Stirchley as well, great beer and normally a really good vibe at the weekend.
 - The Victoria - good cocktails and right by the train station, have DJs and dancing until 2am at the weekends
-- Brewdog - same as any other BrewDog bar. You can expect some nice craft, with the kind of crowd where someone is always asking "whats the closest thing to Carling"
-- Bourne and Co - cocktails, nice place. 
-- Island bar - cocktails and dancing
+- Brewdog - same as any other BrewDog bar. You can expect some nice craft, with the kind of crowd where someone is always asking "whats the closest thing to Carling" 
 - Night Owl - late bar open until 4ish I think, drinks and dancing, crowd is a bit older, pretty much everyone is 25+ really good vibe, normally disco/soul kinda stuff - one of my favs
 - The Button Factory - nice bar in the jewellery quarter. A little bit bougie.
 - Ana Rocha - quirky place, it's an antiques shop that opens up as a bar
 - Old Joint Stock - really nice old style pub
 - Tilt - some of the most niche craft beer in Brum, along with having a fair few pinball machines
-- Jekyll & Hyde - cocktails and loads of gin
+
 
 ### Gone but not forgotten
 
 - Nocturnal Animals - Cool 80s vibe. Good cocktails. Quite expensive.
 - 18/81 - my favourite cocktail bar in Birmingham. Unique and amazing cocktails.
-
-### Coffee
-
-- Faculty Coffe - really small cafe a stones throw away from Grand Central. In my opinion the best cup of coffee in Brum.
-- Yorks - also very close to Grand Central, and as well as doing banging food, they do brilliant coffee.
-- Ngopi - Indonesian coffee shop. They roast everything in house. The standard coffee is good but they so specialty coffee that is well worth giving a chance. Try the Es Kopi Susu, it's a sweet iced coffee withcondensed milk. Not something you'll get anywhere else in Brum (as far as I know)
-- Quarter Horse Coffee - it's a little out of the way but it's worth the walk. They roast their own coffee and even sell bags of beans to take away. 
+- Digbrew - Smallish brewery that open up and do a taproom Friday and Saturday, in my opinion some of the best beer coming out of Birmingham at the moment. They also serve great pizza.
+- Island bar - cocktails and dancing
 

@@ -27,6 +27,12 @@ body {
   {% endif %}
   overflow-wrap: break-word;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
 p {
   line-height: 1.5;
   margin: 1.875rem 0;
@@ -569,6 +575,16 @@ footer .footer-custom-content {
   .post-preview .post-image-small {
     display: block;
   }
+}
+
+body.dark-mode .post-title,
+body.dark-mode .post-subtitle,
+body.dark-mode .post-meta {
+  color: #ffffff;
+}
+
+body.dark-mode .post-image img {
+  filter: brightness(0.8);
 }
 
 .post-preview .post-read-more {

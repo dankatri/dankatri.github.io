@@ -35,4 +35,4 @@ I'll be adding the albums to a playlist as the year goes on, you can listen to t
 - [#18 Elbow - The Seldom Seen Kid](/2023-05-06-Elbow/)
 - [#19 Trivium - Ascendancy](/2023-05-13-Trivium/)
 - [#20 Hozier - Waste Land, Baby!](/2023-05-20-Hozier/)
-- [#21 The 1975 - The 1975](/2023-05-27-The1975/)
+- [#21 The 1975 - The 1975](/2023-05-27-The1975/)  

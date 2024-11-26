@@ -1,3 +1,9 @@
+---
+layout: post 
+title: >
+    Every Day Stuff
+tags: EDC, Tech, Carry
+---
 
 I'm fascinated by Everyday Carry (EDC), but my setup is unique. As someone working from home, most of my essential items aren't about portability—they're about daily functionality and comfort.
 

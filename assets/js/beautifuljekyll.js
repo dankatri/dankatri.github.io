@@ -7,6 +7,7 @@ var BeautifulJekyllJS = {
 
   init : function() {
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
+    setTimeout(BeautifulJekyllJS.initDarkMode, 10);
 
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll(function() {
@@ -43,6 +44,22 @@ var BeautifulJekyllJS = {
       $(".navbar").removeClass("navbar-light").addClass("navbar-dark");
     } else {
       $(".navbar").removeClass("navbar-dark").addClass("navbar-light");
+    }
+  },
+
+  initDarkMode : function() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    if (!darkModeToggle) return;
+
+    darkModeToggle.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      const isDarkMode = document.body.classList.contains('dark-mode');
+      localStorage.setItem('dark-mode', isDarkMode);
+    });
+
+    const isDarkMode = JSON.parse(localStorage.getItem('dark-mode'));
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
     }
   },
 

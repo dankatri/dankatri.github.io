@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: DKatri
+title: Forward Dan
 
 # Your name to show in the footer
 author: Dan Katri
@@ -22,11 +22,11 @@ author: Dan Katri
 navbar-links:
   About: "aboutme"
   Now: "now"
-  52 Albums: "Albums-2023"
   TIL: "til"
   Socials:
     - Twitter: "https://twitter.com/dkatri"
     - Mastodon: "https://mastodon.social/@dkatri"
+    - Instagram: "https://www.instagram.com/dkatri"
   
 
 ################

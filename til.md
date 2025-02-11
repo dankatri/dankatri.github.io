@@ -1,6 +1,25 @@
 ---
 title: Today I Learned
+updated: 2025-01-20
 ---
+
+**20/01/2025:**
+- Dragging a file into terminal.app on Mac will give you its file path. Handy!
+
+**11/01/2025:**
+- Crocodiles have figured out how to look like drowning people so that people come and attempt to save them 
+
+**01/01/2025:**
+- The first 2 letters of license plates in the UK tell you where the car was registered. 
+
+**19/12/2024:**
+- Eggnog, if made properly can be shelf stable for years (in a fridge anyway) - https://youtu.be/pUw4u5zIXDg?si=zwlwb_1GtsVOtSpB
+
+**08/11/2024:**
+- Only blind people are allowed to do massages in Korea
+
+**12/2/2023:**
+- Mumbai is the city with the most English speaking people 
 
 **9/2/23:**
 - [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) invented Linux and named it after himself, he also named git after himself as he is a bit of a git 
@@ -15,7 +34,7 @@ title: Today I Learned
 - Italy doesn't have juries at trials 
 
 **22/1/22:**
-- Akala is the brother of Ms Dynamite
+- Akala's sister is Ms Dynamite
 
 **7/1/22:**
 - Chinese doesn't have a concept of "alphabetical order" instead it's number of strokes in the symbol. This meant at the Beijing Olympic opening ceremony teams came out in a seemingly random order 

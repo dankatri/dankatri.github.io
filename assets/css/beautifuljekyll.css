@@ -4,6 +4,23 @@ layout: null
 
 @import url("pygment_highlights.css");
 
+/* Explanation of Liquid templating in CSS */
+
+/*
+Jekyll uses Liquid templating language to process files. When you include 
+liquid tags like {{ site.text-col | default: "#404040" }} in your CSS, 
+Jekyll processes these before serving the file to the browser.
+
+These liquid tags serve several important purposes:
+1. Dynamic theming - They allow you to define colors and other properties in your _config.yml
+2. Customization - Site owners can change the look and feel without editing CSS directly
+3. Default values - The "default" filter provides fallbacks if variables aren't defined
+4. Consistency - The same colors/styles can be referenced across multiple files
+
+For your Beautiful Jekyll theme, these liquid tags pull settings from your site's 
+configuration, making the theme completely customizable without modifying CSS code.
+*/
+
 /* --- General --- */
 
 html {

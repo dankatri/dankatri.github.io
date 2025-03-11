@@ -18,9 +18,11 @@ jobs:
         run: |
           echo "---" > _config_ci.yml
           echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+          echo "repository: ${{ github.repository }}" >> _config_ci.yml
       - name: Build site
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --future --config _config_ci.yml,_config.yml
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: bundle install && bundle exec jekyll build --future --config _config_ci.yml,_config.yml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

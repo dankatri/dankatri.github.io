@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Packing Showdown: Travel Backpacks for Japan
+title: Packing Showdown -  Travel Backpacks for Japan
 slug: packing-showdown-japan
 tags: travel, bags, edc
 ---

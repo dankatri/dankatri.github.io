@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadingMessage = document.getElementById('loading-message');
   const errorMessage = document.getElementById('error-message');
 
-  // Create a proxy URL to avoid CORS issues
+  // Create a proxy URL to avoid CORS issues when fetching from Goodreads
   const goodreadsUrl = 'https://www.goodreads.com/review/list/78282943-dan-katri?shelf=currently-reading';
   const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(goodreadsUrl);
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const doc = parser.parseFromString(html, 'text/html');
       
       // Find the book elements in the Goodreads page
-      const bookElements = doc.querySelectorAll('.bookalike');
+      const bookElements = doc.querySelectorAll('.bookalike, .review');
       
       if (bookElements.length === 0) {
         throw new Error('No books found');
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Create HTML for each book
       bookElements.forEach(bookElement => {
-        // Extract book information
-        const coverImg = bookElement.querySelector('.cover img');
-        const titleElement = bookElement.querySelector('.title a');
-        const authorElement = bookElement.querySelector('.author a');
-        const progressElement = bookElement.querySelector('.shelf-status');
+        // Extract book information - try multiple selectors to be resilient to Goodreads HTML structure changes
+        const coverImg = bookElement.querySelector('.cover img, .book_cover img, .bookCover img');
+        const titleElement = bookElement.querySelector('.title a, .bookTitle, .book_title a');
+        const authorElement = bookElement.querySelector('.author a, .authorName a, .bookAuthor a');
+        const progressElement = bookElement.querySelector('.shelf-status, .reading-status');
         
         if (coverImg && titleElement && authorElement) {
-          const bookUrl = titleElement.href;
+          const bookUrl = titleElement.href.startsWith('http') ? titleElement.href : `https://www.goodreads.com${titleElement.href}`;
           const title = titleElement.textContent.trim();
           const author = authorElement.textContent.trim();
           const coverSrc = coverImg.src;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
       booksContainer.style.display = 'flex';
     })
     .catch(error => {
-      console.error('Error fetching books:', error);
+      console.error('Error fetching books from Goodreads:', error);
       loadingMessage.style.display = 'none';
       errorMessage.style.display = 'block';
     });

@@ -6,12 +6,12 @@ title: Currently Reading
 <div id="reading-container">
   <div id="loading-message" class="loading-spinner">
     <div class="spinner"></div>
-    <p>Loading books from StoryGraph...</p>
+    <p>Loading books from Goodreads...</p>
   </div>
   <div id="error-message" style="display: none;">
     <div class="error-container">
       <i class="fas fa-exclamation-circle"></i>
-      <p>Unable to load books from StoryGraph. Please try again later or <a href="https://app.thestorygraph.com/currently-reading/dkatri" target="_blank">visit StoryGraph directly</a>.</p>
+      <p>Unable to load books from Goodreads. Please try again later or <a href="https://www.goodreads.com/review/list/78282943-dan-katri?shelf=currently-reading" target="_blank">visit Goodreads directly</a>.</p>
     </div>
   </div>
   <div id="books-container" style="display: none;">
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const errorMessage = document.getElementById('error-message');
 
   // Create a proxy URL to avoid CORS issues
-  const storygraphUrl = 'https://app.thestorygraph.com/currently-reading/dkatri';
-  const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(storygraphUrl);
+  const goodreadsUrl = 'https://www.goodreads.com/review/list/78282943-dan-katri?shelf=currently-reading';
+  const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(goodreadsUrl);
 
   fetch(proxyUrl)
     .then(response => {
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       
-      // Find the book elements in the StoryGraph page
-      const bookElements = doc.querySelectorAll('.book-pane-container');
+      // Find the book elements in the Goodreads page
+      const bookElements = doc.querySelectorAll('.bookalike');
       
       if (bookElements.length === 0) {
         throw new Error('No books found');
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
       // Create HTML for each book
       bookElements.forEach(bookElement => {
         // Extract book information
-        const coverImg = bookElement.querySelector('.book-cover img');
-        const titleElement = bookElement.querySelector('.book-title-author-and-series a');
-        const authorElement = bookElement.querySelector('.book-title-author-and-series span:nth-child(3)');
-        const progressElement = bookElement.querySelector('.currently-reading-progress');
+        const coverImg = bookElement.querySelector('.cover img');
+        const titleElement = bookElement.querySelector('.title a');
+        const authorElement = bookElement.querySelector('.author a');
+        const progressElement = bookElement.querySelector('.shelf-status');
         
         if (coverImg && titleElement && authorElement) {
           const bookUrl = titleElement.href;
@@ -68,13 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
           bookCard.className = 'book-card';
           bookCard.innerHTML = `
             <div class="book-cover">
-              <a href="https://app.thestorygraph.com${bookUrl}" target="_blank">
+              <a href="${bookUrl}" target="_blank">
                 <img src="${coverSrc}" alt="${title} cover">
               </a>
             </div>
             <div class="book-details">
               <h3 class="book-title">
-                <a href="https://app.thestorygraph.com${bookUrl}" target="_blank">${title}</a>
+                <a href="${bookUrl}" target="_blank">${title}</a>
               </h3>
               <p class="book-author">${author}</p>
               ${progress ? `<p class="book-progress">${progress}</p>` : ''}

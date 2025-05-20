@@ -51,6 +51,17 @@ body.dark-mode .navbar-custom {
   border-bottom: 1px solid #333333;
 }
 
+body.dark-mode .navbar-custom .navbar-brand,
+body.dark-mode .navbar-custom .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+body.dark-mode .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
+  background-color: #121212;
+  color: #ffffff;
+  border-color: #333333;
+}
+
 /* Dark Mode Toggle Button */
 #dark-mode-toggle {
   position: fixed;

@@ -242,9 +242,19 @@ document.addEventListener('DOMContentLoaded', function() {
   background-color: #fff;
 }
 
+body.dark-mode .book-card {
+  background-color: #2d2d2d;
+  border-color: #444;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
 .book-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .book-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
 }
 
 .book-cover {
@@ -256,6 +266,10 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 150px;
   max-height: 225px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .book-cover img {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
 }
 
 .book-details {
@@ -277,10 +291,19 @@ document.addEventListener('DOMContentLoaded', function() {
   color: #666;
 }
 
+body.dark-mode .book-author {
+  color: #bbb;
+}
+
 .book-progress, .book-date-read {
   margin-top: auto;
   font-weight: bold;
   color: #0085A1;
+}
+
+body.dark-mode .book-progress, 
+body.dark-mode .book-date-read {
+  color: #5CB4D0;
 }
 
 @media (max-width: 768px) {

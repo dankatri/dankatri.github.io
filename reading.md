@@ -1,10 +1,19 @@
 ---
+title: Currently Reading
 ---
 # Currently Reading
 
 <div id="reading-container">
-  <div id="loading-message">Loading books from StoryGraph...</div>
-  <div id="error-message" style="display: none; color: red;">Unable to load books. Please try again later.</div>
+  <div id="loading-message" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading books from StoryGraph...</p>
+  </div>
+  <div id="error-message" style="display: none;">
+    <div class="error-container">
+      <i class="fas fa-exclamation-circle"></i>
+      <p>Unable to load books from StoryGraph. Please try again later or <a href="https://app.thestorygraph.com/currently-reading/dkatri" target="_blank">visit StoryGraph directly</a>.</p>
+    </div>
+  </div>
   <div id="books-container" style="display: none;">
     <!-- Books will be inserted here dynamically -->
   </div>
@@ -98,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2rem;
+  justify-content: flex-start;
 }
 
 .book-card {
@@ -105,10 +115,17 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 300px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 .book-cover {
@@ -155,5 +172,53 @@ document.addEventListener('DOMContentLoaded', function() {
   .book-card {
     max-width: 100%;
   }
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #0085A1;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-container {
+  padding: 1.5rem;
+  border: 1px solid #ffcdd2;
+  background-color: #ffebee;
+  border-radius: 8px;
+  color: #c62828;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.error-container i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.error-container a {
+  color: #c62828;
+  text-decoration: underline;
 }
 </style>

@@ -8,6 +8,10 @@ _site
 Thumbs.db
 ehthumbs.db
 
+# Jekyll
 Gemfile.lock
-
 beautiful-jekyll-theme-*.gem
+
+# Node/Eleventy
+node_modules
+package-lock.json

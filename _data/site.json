@@ -1,0 +1,47 @@
+{
+  "title": "Forward Dan",
+  "author": "Dan Katri",
+  "url_pretty": "dkatri.xyz",
+  "description": "ramblings of a useless 30 somethign",
+  "avatar": "/assets/img/avatar-icon.png",
+  "round_avatar": true,
+  "navbar_links": {
+    "About": "/aboutme",
+    "Now": "/now",
+    "Reading": "/reading",
+    "TIL": "/til",
+    "Socials": [
+      {"Twitter": "https://twitter.com/dkatri"},
+      {"Mastodon": "https://mastodon.social/@dkatri"},
+      {"Instagram": "https://www.instagram.com/dkatri"}
+    ]
+  },
+  "social_network_links": {
+    "rss": true,
+    "github": "dankatri",
+    "twitter": "dankatri",
+    "mastodon": "mastodon.social/@dkatri"
+  },
+  "navbar_col": "#EAEAEA",
+  "navbar_text_col": "#404040",
+  "navbar_border_col": "#DDDDDD",
+  "page_col": "#FFFFFF",
+  "text_col": "#404040",
+  "link_col": "#008AFF",
+  "hover_col": "#0085A1",
+  "footer_col": "#EAEAEA",
+  "footer_text_col": "#777777",
+  "footer_link_col": "#404040",
+  "footer_hover_col": "#0085A1",
+  "excerpt_length": 50,
+  "feed_show_excerpt": true,
+  "feed_show_tags": true,
+  "post_search": false,
+  "edit_page_button": true,
+  "share_links_active": {
+    "twitter": true,
+    "facebook": true,
+    "linkedin": true
+  },
+  "date_format": "%B %-d, %Y"
+}

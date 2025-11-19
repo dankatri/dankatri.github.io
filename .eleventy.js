@@ -56,16 +56,18 @@ module.exports = function(eleventyConfig) {
   });
 
   // Strip HTML filter
+  // Note: This filter is designed to work with trusted markdown content from the repository.
+  // Output should always be further escaped with xml_escape when used in feeds.
   eleventyConfig.addFilter("strip_html", function(content) {
     if (!content) return '';
-    // First, escape any remaining script tags
-    let sanitized = String(content)
-      .replace(/<script[^>]*>.*?<\/script>/gis, '')
-      .replace(/<[^>]+>/g, '');
+    // Remove all HTML tags including script tags
+    // This is safe for trusted content and will be XML-escaped in feed context
+    let sanitized = String(content).replace(/<[^>]*>/g, '');
     return sanitized;
   });
 
   // XML escape filter
+  // This provides defense-in-depth by escaping any remaining special characters
   eleventyConfig.addFilter("xml_escape", function(content) {
     if (!content) return '';
     return String(content)
@@ -73,10 +75,7 @@ module.exports = function(eleventyConfig) {
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;')
-      // Additional escaping for script tags to prevent HTML injection
-      .replace(/<script/gi, '&lt;script')
-      .replace(/<\/script>/gi, '&lt;/script&gt;');
+      .replace(/'/g, '&apos;');
   });
 
   // Absolute URL filter

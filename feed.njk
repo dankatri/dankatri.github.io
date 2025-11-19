@@ -9,17 +9,19 @@ eleventyExcludeFromCollections: true
     <description>{{ site.description | xml_escape }}</description>
     <link>https://{{ site.url_pretty }}/</link>
     <atom:link href="https://{{ site.url_pretty }}/feed.xml" rel="self" type="application/rss+xml" />
-    {% for post in collections.posts | reverse | limit(20) %}
+    {%- for post in collections.posts | reverse -%}
+    {%- if loop.index <= 20 -%}
       <item>
         <title>{{ post.data.title | strip_html | xml_escape }}</title>
         <description>
-          {% if post.data.subtitle %}{{ post.data.subtitle | strip_html | xml_escape }} - {% endif %}
+          {%- if post.data.subtitle -%}{{ post.data.subtitle | strip_html | xml_escape }} - {%- endif -%}
           {{ post.templateContent | strip_html | xml_escape | truncatewords(site.excerpt_length) }}
         </description>
-        <pubDate>{{ post.date | rssDate }}</pubDate>
+        <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
         <link>https://{{ site.url_pretty }}{{ post.url }}</link>
         <guid isPermaLink="true">https://{{ site.url_pretty }}{{ post.url }}</guid>
       </item>
-    {% endfor %}
+    {%- endif -%}
+    {%- endfor -%}
   </channel>
 </rss>

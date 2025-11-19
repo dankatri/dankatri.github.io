@@ -30,7 +30,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("_layouts_jekyll/**");
   eleventyConfig.ignores.add("_includes_jekyll/**");
   eleventyConfig.ignores.add("Gemfile");
+  eleventyConfig.ignores.add("Gemfile.lock");
   eleventyConfig.ignores.add("beautiful-jekyll-theme.gemspec");
+  eleventyConfig.ignores.add("_config.yml");
+  eleventyConfig.ignores.add("vendor/**");
+  eleventyConfig.ignores.add(".bundle/**");
 
   // Date formatting filter
   eleventyConfig.addFilter("dateFormat", function(date, format) {
@@ -95,8 +99,14 @@ module.exports = function(eleventyConfig) {
 
   // RSS date filter
   eleventyConfig.addFilter("rssDate", function(date) {
-    const d = new Date(date);
-    return d.toUTCString();
+    if (!date) return "";
+    try {
+      const d = new Date(date);
+      return d.toUTCString();
+    } catch (e) {
+      console.error("Error formatting RSS date:", e);
+      return "";
+    }
   });
 
   // Limit filter
@@ -130,7 +140,7 @@ module.exports = function(eleventyConfig) {
       layouts: "_layouts",
       output: "_site"
     },
-    templateFormats: ["html", "md", "njk"],
+    templateFormats: ["html", "md", "njk", "xml"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };

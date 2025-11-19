@@ -20,7 +20,7 @@
           {% endif %}
 
           {% if pageType == "post" %}
-            <span class="post-meta">Posted on {{ date | dateFormat }}</span>
+            <span class="post-meta">Posted on {{ page.date | dateFormat }}</span>
           {% endif %}
         </div>
       </div>
@@ -45,7 +45,7 @@
           {% endif %}
 
           {% if pageType == "post" %}
-            <span class="post-meta">Posted on {{ date | dateFormat }}</span>
+            <span class="post-meta">Posted on {{ page.date | dateFormat }}</span>
           {% endif %}
         </div>
       </div>

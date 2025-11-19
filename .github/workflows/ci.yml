@@ -1,28 +1,20 @@
-name: Beautiful Jekyll CI
+name: Eleventy CI
 on: [push, pull_request]
 jobs:
   build:
-    name: Build Jekyll
+    name: Build Eleventy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v3
         with:
-          ruby-version: '3.3'
+          node-version: '20'
       - name: Install dependencies
-        run: bundle install
+        run: npm ci
       - name: Setup Pages
         id: configure-pages
         uses: actions/configure-pages@v5
-      - name: Setup CI config
-        run: |
-          echo "---" > _config_ci.yml
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
-          echo "repository: ${{ github.repository }}" >> _config_ci.yml
       - name: Build site
-        env:
-          JEKYLL_ENV: production
-          PAGES_REPO_NWO: ${{ github.repository }}
-        run: bundle install && bundle exec jekyll build --future --config _config_ci.yml,_config.yml
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

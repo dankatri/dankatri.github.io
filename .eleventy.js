@@ -93,6 +93,22 @@ module.exports = function(eleventyConfig) {
     return words.slice(0, length).join(' ');
   });
 
+  // RSS date filter
+  eleventyConfig.addFilter("rssDate", function(date) {
+    const d = new Date(date);
+    return d.toUTCString();
+  });
+
+  // Limit filter
+  eleventyConfig.addFilter("limit", function(array, limit) {
+    return array.slice(0, limit);
+  });
+
+  // Reverse filter
+  eleventyConfig.addFilter("reverse", function(array) {
+    return [...array].reverse();
+  });
+
   // Collections
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("_posts/*.md").reverse();

@@ -57,17 +57,26 @@ module.exports = function(eleventyConfig) {
 
   // Strip HTML filter
   eleventyConfig.addFilter("strip_html", function(content) {
-    return content.replace(/<[^>]+>/g, '');
+    if (!content) return '';
+    // First, escape any remaining script tags
+    let sanitized = String(content)
+      .replace(/<script[^>]*>.*?<\/script>/gis, '')
+      .replace(/<[^>]+>/g, '');
+    return sanitized;
   });
 
   // XML escape filter
   eleventyConfig.addFilter("xml_escape", function(content) {
-    return content
+    if (!content) return '';
+    return String(content)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
+      .replace(/'/g, '&apos;')
+      // Additional escaping for script tags to prevent HTML injection
+      .replace(/<script/gi, '&lt;script')
+      .replace(/<\/script>/gi, '&lt;/script&gt;');
   });
 
   // Absolute URL filter

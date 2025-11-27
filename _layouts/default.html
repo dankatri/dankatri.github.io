@@ -1,25 +1,10 @@
 ---
 layout: base
 ---
-<head><link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"></head>
 <div class="intro-header"></div>
 
-<div role="main" class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  {% if page.before-content %}
-    <div class="before-content">
-      {% for file in page.before-content %}
-        {% include {{ file }} %}
-      {% endfor %}
-    </div>
-  {% endif %}
+<div role="main" class="{% if full_width %}container-fluid{% else %}container-md{% endif %}">
+  
+  {{ content | safe }}
 
-  {{ content }}
-
-  {% if page.after-content %}
-    <div class="after-content">
-      {% for file in page.after-content %}
-        {% include {{ file }} %}
-      {% endfor %}
-    </div>
-  {% endif %}
 </div>

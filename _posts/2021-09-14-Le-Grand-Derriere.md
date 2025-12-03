@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Le Grand Derriere - Tom Bihn
 slug: lgd-tom-bihn
 date_published: 2021-09-14T19:00:00.000Z

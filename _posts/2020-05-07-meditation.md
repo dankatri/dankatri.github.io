@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Meditation and Coping
 slug: meditation-and-coping
 date_published: 2020-05-07T19:00:00.000Z

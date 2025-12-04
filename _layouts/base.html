@@ -36,6 +36,11 @@
   <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
   <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
   <link rel="stylesheet" href="/assets/css/pygment_highlights.css">
+
+  {% if site.goatcounter_code %}
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
 </head>
 
 <body>

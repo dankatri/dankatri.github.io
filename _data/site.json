@@ -43,5 +43,6 @@
     "facebook": true,
     "linkedin": true
   },
-  "date_format": "%B %-d, %Y"
+  "date_format": "%B %-d, %Y",
+  "goatcounter_code": "dankatri"
 }

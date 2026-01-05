@@ -21,5 +21,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0"
+  },
+  "dependencies": {
+    "markdown-it-footnote": "^4.0.0"
   }
 }

@@ -129,7 +129,13 @@ module.exports = function(eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("_posts/*.md").reverse();
+    const now = new Date();
+    return collectionApi.getFilteredByGlob("_posts/*.md")
+      .filter(post => {
+        const postDate = new Date(post.date);
+        return postDate <= now;
+      })
+      .reverse();
   });
 
   // Tags collection

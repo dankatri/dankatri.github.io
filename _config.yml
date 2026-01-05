@@ -22,7 +22,6 @@ author: Dan Katri
 navbar-links:
   About: "aboutme"
   Now: "now"
-  Reading: "reading"
   TIL: "til"
   Socials:
     - Twitter: "https://twitter.com/dkatri"

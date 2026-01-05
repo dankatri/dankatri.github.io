@@ -28,6 +28,9 @@ body {
   font-size: 1.125rem;
   color: #404040;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #FFFFFF;
   overflow-wrap: break-word;
 }
@@ -52,6 +55,25 @@ body.dark-mode .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
   background-color: #121212;
   color: #ffffff;
   border-color: #333333;
+}
+
+/* Footer in dark mode */
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333333;
+}
+
+body.dark-mode footer p.text-muted {
+  color: #aaaaaa !important;
+}
+
+body.dark-mode footer a {
+  color: #dddddd;
+}
+
+body.dark-mode footer a:hover,
+body.dark-mode footer a:focus {
+  color: #00b4d8;
 }
 
 /* Dark Mode Toggle Button */
@@ -439,14 +461,21 @@ img {
   }
 }
 
+/* --- Main Content Area --- */
+
+[role="main"] {
+  flex: 1 0 auto;
+}
+
 /* --- Footer --- */
 
 footer {
-  padding: 1.875rem 0;
+  padding: 1rem 0;
   border-top: 1px #EAEAEA solid;
-  margin-top: 3.125rem;
+  margin-top: auto;
   font-size: 0.875rem;
   background-color: #EAEAEA;
+  flex-shrink: 0;
 }
 
 footer p.text-muted {
@@ -485,7 +514,7 @@ footer .footer-custom-content {
 
 @media (min-width: 768px) {
   footer {
-    padding: 3.125rem 0;
+    padding: 1.5rem 0;
   }
   footer .footer-links {
     font-size: 1.125rem;

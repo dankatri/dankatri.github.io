@@ -337,8 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 body.dark-mode .book-card {
-  background-color: #2d2d2d;
-  border-color: #444;
+  background-color: #2d6a4f;
+  border-color: #40916c;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
@@ -369,9 +369,9 @@ body.dark-mode .book-card:hover {
 }
 
 body.dark-mode .source-goodreads {
-  background-color: #4a3929;
-  color: #f4f1ea;
-  border: 1px solid #5a4939;
+  background-color: #52b788;
+  color: #1b4332;
+  border: 1px solid #74c69d;
 }
 
 .source-storygraph {
@@ -381,9 +381,9 @@ body.dark-mode .source-goodreads {
 }
 
 body.dark-mode .source-storygraph {
-  background-color: #1a4450;
-  color: #a8d5dd;
-  border: 1px solid #2a5460;
+  background-color: #95d5b2;
+  color: #1b4332;
+  border: 1px solid #b7e4c7;
 }
 
 .book-cover {
@@ -421,7 +421,7 @@ body.dark-mode .book-cover img {
 }
 
 body.dark-mode .book-author {
-  color: #bbb;
+  color: #d8f3dc;
 }
 
 .book-progress, .book-date-read {
@@ -437,7 +437,7 @@ body.dark-mode .book-author {
 
 body.dark-mode .book-progress,
 body.dark-mode .book-date-read {
-  color: #5CB4D0;
+  color: #FFB6C1;
 }
 
 @media (max-width: 768px) {

@@ -7,12 +7,12 @@ title: Currently Reading
 <div id="reading-container">
   <div id="loading-message" class="loading-spinner">
     <div class="spinner"></div>
-    <p>Loading books from Goodreads...</p>
+    <p>Loading books from Goodreads and StoryGraph...</p>
   </div>
   <div id="error-message" style="display: none;">
     <div class="error-container">
       <i class="fas fa-exclamation-circle"></i>
-      <p>Unable to load books from Goodreads. Please try again later or <a href="https://www.goodreads.com/review/list/78282943-dan-katri?shelf=currently-reading" target="_blank">visit Goodreads directly</a>.</p>
+      <p>Unable to load books. Please try again later.</p>
     </div>
   </div>
   <div id="books-container" style="display: none;">
@@ -26,7 +26,73 @@ document.addEventListener('DOMContentLoaded', function() {
   const loadingMessage = document.getElementById('loading-message');
   const errorMessage = document.getElementById('error-message');
 
-  // Create a proxy URL to avoid CORS issues when fetching from Goodreads
+  let goodreadsLoaded = false;
+  let storyGraphLoaded = false;
+
+  function checkIfAllLoaded() {
+    if (goodreadsLoaded && storyGraphLoaded) {
+      loadingMessage.style.display = 'none';
+      if (booksContainer.children.length > 0) {
+        booksContainer.style.display = 'flex';
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    }
+  }
+
+  function createBookCard(book, source) {
+    const bookCard = document.createElement('div');
+    bookCard.className = 'book-card';
+
+    const sourceClass = source === 'goodreads' ? 'source-goodreads' : 'source-storygraph';
+    const sourceLabel = source === 'goodreads' ? 'Goodreads' : 'StoryGraph';
+
+    bookCard.innerHTML = `
+      <div class="book-source-badge ${sourceClass}">${sourceLabel}</div>
+      <div class="book-cover">
+        <a href="${book.url}" target="_blank">
+          <img src="${book.coverUrl}" alt="${book.title} cover">
+        </a>
+      </div>
+      <div class="book-details">
+        <h3 class="book-title">
+          <a href="${book.url}" target="_blank">${book.title}</a>
+        </h3>
+        <p class="book-author">${book.author}</p>
+        ${book.progress ? `<p class="book-progress">${book.progress}</p>` : ''}
+      </div>
+    `;
+
+    return bookCard;
+  }
+
+  // Load StoryGraph books from local data
+  fetch('{{ site.baseurl }}/assets/data/storygraph.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.currently_reading && data.currently_reading.length > 0) {
+        data.currently_reading.forEach(book => {
+          const bookData = {
+            title: book.title,
+            author: book.author,
+            coverUrl: book.coverUrl,
+            url: book.storyGraphUrl || '#',
+            progress: book.progress
+          };
+          const bookCard = createBookCard(bookData, 'storygraph');
+          booksContainer.appendChild(bookCard);
+        });
+      }
+      storyGraphLoaded = true;
+      checkIfAllLoaded();
+    })
+    .catch(error => {
+      console.log('StoryGraph data not available:', error);
+      storyGraphLoaded = true;
+      checkIfAllLoaded();
+    });
+
+  // Load Goodreads books
   const goodreadsUrl = 'https://www.goodreads.com/review/list/78282943-dan-katri?shelf=currently-reading';
   const proxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(goodreadsUrl);
 
@@ -38,66 +104,46 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.text();
     })
     .then(html => {
-      // Parse the HTML string
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      
-      // Find the book elements in the Goodreads page
       const bookElements = doc.querySelectorAll('.bookalike, .review');
-      
-      if (bookElements.length === 0) {
-        throw new Error('No books found');
-      }
-      
-      // Create HTML for each book
+
       bookElements.forEach(bookElement => {
-        // Extract book information - try multiple selectors to be resilient to Goodreads HTML structure changes
         const coverImg = bookElement.querySelector('.cover img, .book_cover img, .bookCover img');
         const titleElement = bookElement.querySelector('.title a, .bookTitle, .book_title a');
         const authorElement = bookElement.querySelector('.author a, .authorName a, .bookAuthor a');
         const progressElement = bookElement.querySelector('.shelf-status, .reading-status');
-        
+
         if (coverImg && titleElement && authorElement) {
           const bookUrl = titleElement.href.startsWith('http') ? titleElement.href : `https://www.goodreads.com${titleElement.href}`;
           const title = titleElement.textContent.trim();
           const authorRaw = authorElement.textContent.trim();
-          // Transform author from "lastName, firstName" to "firstName lastName"
-          const author = authorRaw.includes(',') ? 
-            authorRaw.split(',').map(part => part.trim()).reverse().join(' ') : 
+          const author = authorRaw.includes(',') ?
+            authorRaw.split(',').map(part => part.trim()).reverse().join(' ') :
             authorRaw;
           const coverSrc = coverImg.src;
           const progress = progressElement ? progressElement.textContent.trim() : '';
-          
-          // Create book card HTML
-          const bookCard = document.createElement('div');
-          bookCard.className = 'book-card';
-          bookCard.innerHTML = `
-            <div class="book-cover">
-              <a href="${bookUrl}" target="_blank">
-                <img src="${coverSrc}" alt="${title} cover">
-              </a>
-            </div>
-            <div class="book-details">
-              <h3 class="book-title">
-                <a href="${bookUrl}" target="_blank">${title}</a>
-              </h3>
-              <p class="book-author">${author}</p>
-              ${progress ? `<p class="book-progress">${progress}</p>` : ''}
-            </div>
-          `;
-          
+
+          const bookData = {
+            title: title,
+            author: author,
+            coverUrl: coverSrc,
+            url: bookUrl,
+            progress: progress
+          };
+
+          const bookCard = createBookCard(bookData, 'goodreads');
           booksContainer.appendChild(bookCard);
         }
       });
-      
-      // Show the books container
-      loadingMessage.style.display = 'none';
-      booksContainer.style.display = 'flex';
+
+      goodreadsLoaded = true;
+      checkIfAllLoaded();
     })
     .catch(error => {
       console.error('Error fetching books from Goodreads:', error);
-      loadingMessage.style.display = 'none';
-      errorMessage.style.display = 'block';
+      goodreadsLoaded = true;
+      checkIfAllLoaded();
     });
 });
 </script>
@@ -107,12 +153,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <div id="read-container">
   <div id="read-loading-message" class="loading-spinner">
     <div class="spinner"></div>
-    <p>Loading books from Goodreads...</p>
+    <p>Loading books from Goodreads and StoryGraph...</p>
   </div>
   <div id="read-error-message" style="display: none;">
     <div class="error-container">
       <i class="fas fa-exclamation-circle"></i>
-      <p>Unable to load books from Goodreads. Please try again later or <a href="https://www.goodreads.com/review/list/78282943-dan-katri?shelf=read" target="_blank">visit Goodreads directly</a>.</p>
+      <p>Unable to load books. Please try again later.</p>
     </div>
   </div>
   <div id="read-books-container" style="display: none;">
@@ -126,7 +172,84 @@ document.addEventListener('DOMContentLoaded', function() {
   const readLoadingMessage = document.getElementById('read-loading-message');
   const readErrorMessage = document.getElementById('read-error-message');
 
-  // Create a proxy URL to avoid CORS issues when fetching from Goodreads
+  let goodreadsReadLoaded = false;
+  let storyGraphReadLoaded = false;
+
+  function checkIfAllReadLoaded() {
+    if (goodreadsReadLoaded && storyGraphReadLoaded) {
+      readLoadingMessage.style.display = 'none';
+      if (readBooksContainer.children.length > 0) {
+        readBooksContainer.style.display = 'flex';
+      } else {
+        readErrorMessage.style.display = 'block';
+        readErrorMessage.querySelector('p').textContent = `No books read in ${new Date().getFullYear()} found.`;
+      }
+    }
+  }
+
+  function createReadBookCard(book, source) {
+    const bookCard = document.createElement('div');
+    bookCard.className = 'book-card';
+
+    const sourceClass = source === 'goodreads' ? 'source-goodreads' : 'source-storygraph';
+    const sourceLabel = source === 'goodreads' ? 'Goodreads' : 'StoryGraph';
+
+    bookCard.innerHTML = `
+      <div class="book-source-badge ${sourceClass}">${sourceLabel}</div>
+      <div class="book-cover">
+        <a href="${book.url}" target="_blank">
+          <img src="${book.coverUrl}" alt="${book.title} cover">
+        </a>
+      </div>
+      <div class="book-details">
+        <h3 class="book-title">
+          <a href="${book.url}" target="_blank">${book.title}</a>
+        </h3>
+        <p class="book-author">${book.author}</p>
+        ${book.dateRead ? `<p class="book-date-read">Read: ${book.dateRead}</p>` : ''}
+        ${book.rating ? `<p class="book-rating">${'⭐'.repeat(book.rating)}</p>` : ''}
+      </div>
+    `;
+
+    return bookCard;
+  }
+
+  // Load StoryGraph read books from local data
+  fetch('{{ site.baseurl }}/assets/data/storygraph.json')
+    .then(response => response.json())
+    .then(data => {
+      const currentYear = new Date().getFullYear();
+
+      if (data.read && data.read.length > 0) {
+        data.read.forEach(book => {
+          // Filter by current year if dateRead is available
+          if (book.dateRead) {
+            const readYear = new Date(book.dateRead).getFullYear();
+            if (readYear === currentYear) {
+              const bookData = {
+                title: book.title,
+                author: book.author,
+                coverUrl: book.coverUrl,
+                url: book.storyGraphUrl || '#',
+                dateRead: book.dateRead,
+                rating: book.rating
+              };
+              const bookCard = createReadBookCard(bookData, 'storygraph');
+              readBooksContainer.appendChild(bookCard);
+            }
+          }
+        });
+      }
+      storyGraphReadLoaded = true;
+      checkIfAllReadLoaded();
+    })
+    .catch(error => {
+      console.log('StoryGraph data not available:', error);
+      storyGraphReadLoaded = true;
+      checkIfAllReadLoaded();
+    });
+
+  // Load Goodreads read books
   const readGoodreadsUrl = 'https://www.goodreads.com/review/list/78282943-dan-katri?shelf=read';
   const readProxyUrl = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(readGoodreadsUrl);
 
@@ -138,81 +261,51 @@ document.addEventListener('DOMContentLoaded', function() {
       return response.text();
     })
     .then(html => {
-      // Parse the HTML string
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      
-      // Find the book elements in the Goodreads page
       const bookElements = doc.querySelectorAll('.bookalike, .review');
-      
-      if (bookElements.length === 0) {
-        throw new Error('No books found');
-      }
-      
-      // Get current year
       const currentYear = new Date().getFullYear();
-      let booksDisplayed = 0;
-      
-      // Create HTML for each book
+
       bookElements.forEach(bookElement => {
-        // Extract book information - try multiple selectors to be resilient to Goodreads HTML structure changes
         const coverImg = bookElement.querySelector('.cover img, .book_cover img, .bookCover img');
         const titleElement = bookElement.querySelector('.title a, .bookTitle, .book_title a');
         const authorElement = bookElement.querySelector('.author a, .authorName a, .bookAuthor a');
         const dateReadElement = bookElement.querySelector('.date_read_value');
-        
-        // Only add books read in the current year
+
         if (coverImg && titleElement && authorElement && dateReadElement) {
           const dateRead = dateReadElement.textContent.trim();
           const readYear = new Date(dateRead).getFullYear();
-          
+
           if (readYear === currentYear) {
             const bookUrl = titleElement.href.startsWith('http') ? titleElement.href : `https://www.goodreads.com${titleElement.href}`;
             const title = titleElement.textContent.trim();
             const authorRaw = authorElement.textContent.trim();
-            // Transform author from "lastName, firstName" to "firstName lastName"
-            const author = authorRaw.includes(',') ? 
-              authorRaw.split(',').map(part => part.trim()).reverse().join(' ') : 
+            const author = authorRaw.includes(',') ?
+              authorRaw.split(',').map(part => part.trim()).reverse().join(' ') :
               authorRaw;
             const coverSrc = coverImg.src;
-            
-            // Create book card HTML
-            const bookCard = document.createElement('div');
-            bookCard.className = 'book-card';
-            bookCard.innerHTML = `
-              <div class="book-cover">
-                <a href="${bookUrl}" target="_blank">
-                  <img src="${coverSrc}" alt="${title} cover">
-                </a>
-              </div>
-              <div class="book-details">
-                <h3 class="book-title">
-                  <a href="${bookUrl}" target="_blank">${title}</a>
-                </h3>
-                <p class="book-author">${author}</p>
-                <p class="book-date-read">Read: ${dateRead}</p>
-              </div>
-            `;
-            
+
+            const bookData = {
+              title: title,
+              author: author,
+              coverUrl: coverSrc,
+              url: bookUrl,
+              dateRead: dateRead
+            };
+
+            const bookCard = createReadBookCard(bookData, 'goodreads');
             readBooksContainer.appendChild(bookCard);
-            booksDisplayed++;
           }
         }
       });
-      
-      // Show the books container if any books were displayed
-      readLoadingMessage.style.display = 'none';
-      if (booksDisplayed > 0) {
-        readBooksContainer.style.display = 'flex';
-      } else {
-        readErrorMessage.style.display = 'block';
-        readErrorMessage.querySelector('p').textContent = `No books read in ${currentYear} found.`;
-      }
+
+      goodreadsReadLoaded = true;
+      checkIfAllReadLoaded();
     })
     .catch(error => {
       console.error('Error fetching read books from Goodreads:', error);
-      readLoadingMessage.style.display = 'none';
-      readErrorMessage.style.display = 'block';
+      goodreadsReadLoaded = true;
+      checkIfAllReadLoaded();
     });
 });
 </script>
@@ -241,11 +334,12 @@ document.addEventListener('DOMContentLoaded', function() {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #fff;
+  position: relative;
 }
 
 body.dark-mode .book-card {
-  background-color: #2d2d2d;
-  border-color: #444;
+  background-color: #2d6a4f;
+  border-color: #40916c;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
@@ -256,6 +350,41 @@ body.dark-mode .book-card {
 
 body.dark-mode .book-card:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.book-source-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.source-goodreads {
+  background-color: #F4F1EA;
+  color: #382110;
+  border: 1px solid #D8D0C1;
+}
+
+body.dark-mode .source-goodreads {
+  background-color: #52b788;
+  color: #1b4332;
+  border: 1px solid #74c69d;
+}
+
+.source-storygraph {
+  background-color: #E8F5F7;
+  color: #0B4F5F;
+  border: 1px solid #B8D8DD;
+}
+
+body.dark-mode .source-storygraph {
+  background-color: #95d5b2;
+  color: #1b4332;
+  border: 1px solid #b7e4c7;
 }
 
 .book-cover {
@@ -293,7 +422,7 @@ body.dark-mode .book-cover img {
 }
 
 body.dark-mode .book-author {
-  color: #bbb;
+  color: #d8f3dc;
 }
 
 .book-progress, .book-date-read {
@@ -302,16 +431,21 @@ body.dark-mode .book-author {
   color: #0085A1;
 }
 
-body.dark-mode .book-progress, 
+.book-rating {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+}
+
+body.dark-mode .book-progress,
 body.dark-mode .book-date-read {
-  color: #5CB4D0;
+  color: #FFB6C1;
 }
 
 @media (max-width: 768px) {
-  #books-container {
+  #books-container, #read-books-container {
     justify-content: center;
   }
-  
+
   .book-card {
     max-width: 100%;
   }

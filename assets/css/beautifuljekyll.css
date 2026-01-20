@@ -1,4 +1,5 @@
 @import url("pygment_highlights.css");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
 /* Explanation of Liquid templating in CSS */
 
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", "Courier", "monospace";
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   font-size: 1.125rem;
   color: #404040;
   position: relative;
@@ -133,6 +134,19 @@ body.dark-mode footer a:focus {
   box-shadow: 0 0 0 3px rgba(204, 85, 0, 0.5);
 }
 
+/* Dark mode toggle button when dark mode is active */
+body.dark-mode #dark-mode-toggle {
+  background-color: #FFB6C1;
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+  background-color: #FFC0CB;
+}
+
+body.dark-mode #dark-mode-toggle:focus {
+  box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.5);
+}
+
 #dark-mode-toggle .fa-sun {
   display: none;
 }
@@ -150,10 +164,10 @@ p {
   margin: 1.875rem 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: "Futura", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", "sans-serif";
-  font-weight: 800;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
   line-height: 1.1;
-  color: #cc5500; 
+  color: #cc5500;
 }
 h1 {
   font-size: 2.25rem;
@@ -250,9 +264,13 @@ img {
 /* --- Navbar --- */
 
 .navbar-custom {
-  background-color: #EAEAEA;
-  border-bottom: 1px solid #DDDDDD;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: {{ site.navbar-col | default: "#EAEAEA" }};
+  border-bottom: 1px solid {{ site.navbar-border-col | default: "#DDDDDD" }};
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  {% if site.navbar-img %}
+    background-image: url({{ site.navbar-img | relative_url }});
+    background-attachment: fixed;
+  {% endif %}
   -webkit-transition: padding 0.5s ease-in-out;
   -moz-transition: padding 0.5s ease-in-out;
   transition: padding 0.5s ease-in-out;
@@ -524,7 +542,7 @@ footer .list-inline {
   margin-bottom: 1.875rem;
 }
 footer .copyright {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   text-align: center;
   margin-bottom: 0;
   margin-top: 0;
@@ -536,7 +554,7 @@ footer .theme-by {
 footer .footer-custom-content {
   text-align: center;
   margin-bottom: 0.9375rem;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -578,8 +596,8 @@ footer .footer-custom-content {
 
 .post-preview a {
   text-decoration: none;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #404040;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: {{ site.text-col | default: "#404040" }};
 }
 
 .post-preview a:focus,
@@ -603,7 +621,7 @@ footer .footer-custom-content {
   font-size: 1.125rem;
   font-style: italic;
   margin: 0 0 0.625rem;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 .post-heading .post-meta {
   display: inline-block;
@@ -851,7 +869,7 @@ body.dark-mode .post-preview a:focus {
 }
 
 #full-tags-list {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 #full-tags-list .tag-entry {
@@ -925,7 +943,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   font-size: 1.6875rem;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 300;
   margin: 0.625rem 0 0;
 }
@@ -950,7 +968,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   padding: 0.3125rem 0.625rem;
   font-size: 0.6875rem;
   color: #EEE;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   right: 0;
   bottom: 0;
   display: none;
@@ -1042,10 +1060,10 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 
 .pagination .page-item .page-link {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 1px;
   padding: 0.625rem 0.3125rem;
   background-color: #FFF;
@@ -1107,6 +1125,7 @@ code {
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 0.25rem;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
 }
 
 pre code {
@@ -1120,6 +1139,7 @@ pre {
   line-height: 1.5em;
   border-radius: 0.25rem;
   padding: 0.59375rem;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
 }
 .highlight pre {
   border: none;

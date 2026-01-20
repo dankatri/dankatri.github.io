@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Little Things That Make Sense - Tom Bihn Laundry Stuff Sack
 slug: little-things-stuff-sack
 date_published: 2022-01-07T19:00:00.000Z

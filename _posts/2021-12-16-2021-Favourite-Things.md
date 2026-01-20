@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 2021 Favourite Things
 slug: 2021-favourite-things
 date_published: 2021-12-16T19:00:00.000Z

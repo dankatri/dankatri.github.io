@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Today I Learned
 updated: 2025-01-20
 ---

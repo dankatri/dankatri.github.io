@@ -1,7 +1,3 @@
----
-layout: null
----
-
 @import url("pygment_highlights.css");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
@@ -9,7 +5,7 @@ layout: null
 
 /*
 Jekyll uses Liquid templating language to process files. When you include 
-liquid tags like {{ site.text-col | default: "#404040" }} in your CSS, 
+liquid tags like #404040 in your CSS, 
 Jekyll processes these before serving the file to the browser.
 
 These liquid tags serve several important purposes:
@@ -31,13 +27,12 @@ html {
 body {
   font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
   font-size: 1.125rem;
-  color: {{ site.text-col | default: "#404040" }};
+  color: #404040;
   position: relative;
-  background-color: {{ site.page-col | default: "#FFFFFF" }};
-  {% if site.page-img %}
-  background-image: url({{ site.page-img | relative_url }});
-  background-attachment: fixed;
-  {% endif %}
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #FFFFFF;
   overflow-wrap: break-word;
 }
 
@@ -90,6 +85,25 @@ body.dark-mode .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item:f
   color: #FFB6C1;
 }
 
+/* Footer in dark mode */
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  border-top: 1px solid #333333;
+}
+
+body.dark-mode footer p.text-muted {
+  color: #aaaaaa !important;
+}
+
+body.dark-mode footer a {
+  color: #dddddd;
+}
+
+body.dark-mode footer a:hover,
+body.dark-mode footer a:focus {
+  color: #00b4d8;
+}
+
 /* Dark Mode Toggle Button */
 #dark-mode-toggle {
   position: fixed;
@@ -99,7 +113,7 @@ body.dark-mode .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item:f
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: {{ site.hover-col | default: "#cc5500" }};
+  background-color: #cc5500;
   border: none;
   color: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -111,7 +125,7 @@ body.dark-mode .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item:f
 }
 
 #dark-mode-toggle:hover {
-  background-color: {{ site.hover-col-dark | default: "#9e4200" }};
+  background-color: #9e4200;
   transform: scale(1.05);
 }
 
@@ -171,14 +185,14 @@ h1, h2, h3, h4 {
   margin-top: 1.25rem;
 }
 a {
-  color: {{ site.link-col | default: "#008AFF" }};
+  color: #008AFF;
 }
 a:hover {
-  color: {{ site.hover-col | default: "#cc5500" }};
+  color: #cc5500;
   text-decoration: underline;
 }
 a:focus {
-  color: {{ site.hover-col | default: "#cc5500" }};
+  color: #cc5500;
 }
 blockquote {
   color: #808080;
@@ -215,7 +229,7 @@ hr.small {
 ::selection {
   color: #fff;
   text-shadow: none;
-  background-color: {{ site.hover-col | default: "#0085A1" }};
+  background-color: #0085A1;
 }
 img::selection {
   color: #fff;
@@ -318,7 +332,7 @@ img {
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav .nav-link {
   font-weight: 800;
-  color: {{ site.navbar-text-col | default: "#404040" }};
+  color: #404040;
 }
 
 .navbar-toggler {
@@ -378,24 +392,18 @@ img {
   font-size: 1em;
   border: 0;
   padding: 0;
-  {% if site.navbar-var-length %}
-  min-width: 100%;
-  {% else %}
   min-width: 0;
   width: 100%;
   word-break: break-word;
-  {% endif %}
 }
 
 .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
   padding: 0.625rem;
-  background-color: {{ site.navbar-col | default: "#EAEAEA" }};
+  background-color: #EAEAEA;
   text-decoration: none !important;
   font-weight: normal;
-  color: {{ site.navbar-text-col | default: "#404040" }};
-  {% unless site.navbar-var-length %}
+  color: #404040;
   white-space: normal;
-  {% endunless %}
 }
 
 @media (min-width: 1200px) {
@@ -405,7 +413,7 @@ img {
 
   .navbar-custom .nav-item.dropdown .dropdown-menu .dropdown-item {
     padding-left: 0.625rem;
-    border: 1px solid {{ site.navbar-border-col | default: "#DDDDDD" }};
+    border: 1px solid #DDDDDD;
     border-width: 0 1px 1px;
   }
 
@@ -416,7 +424,7 @@ img {
 
 @media (max-width: 1199px) {
   .navbar-custom .navbar-collapse {
-    border-top: 1px solid {{ site.navbar-border-col | default: "#DDDDDD" }};
+    border-top: 1px solid #DDDDDD;
     margin: 0 -1rem;
   }
 
@@ -442,7 +450,7 @@ img {
 .navbar-custom .navbar-nav .nav-link:focus,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:hover,
 .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:focus {
-  color: {{ site.hover-col | default: "#0085A1" }};
+  color: #0085A1;
 }
 
 .navbar-custom .avatar-container {
@@ -465,18 +473,14 @@ img {
 .navbar-custom .avatar-container .avatar-img-border {
   width: 100%;
   margin-left: -50%;
-  {% unless site.round-avatar == false %}
-    border-radius: 50%;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
-    -webkit-box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .8);
-    -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
-  {% endunless %}
+  border-radius: 50%;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 0.3125rem rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 0.5rem rgba(0, 0, 0, .8);
 }
 .navbar-custom .avatar-container .avatar-img {
   width: 100%;
-  {% unless site.round-avatar == false %}
-    border-radius: 50%;
-  {% endunless %}
+  border-radius: 50%;
   display: block;
 }
 
@@ -492,11 +496,9 @@ img {
 
   .navbar-custom.top-nav-regular .avatar-container .avatar-img-border {
     width: 100%;
-    {% unless site.round-avatar == false %}
     box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
     -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
     -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .8);
-    {% endunless %}
   }
 
   .navbar-custom.top-nav-regular .avatar-container .avatar-img {
@@ -504,31 +506,34 @@ img {
   }
 }
 
+/* --- Main Content Area --- */
+
+[role="main"] {
+  flex: 1 0 auto;
+}
+
 /* --- Footer --- */
 
 footer {
-  padding: 1.875rem 0;
+  padding: 1rem 0;
   border-top: 1px #EAEAEA solid;
-  margin-top: 3.125rem;
+  margin-top: auto;
   font-size: 0.875rem;
-  background-color: {{ site.footer-col | default: "#EAEAEA" }};
-  {% if site.footer-img %}
-    background-image: url({{ site.footer-img | relative_url }});
-    background-attachment: fixed;
-  {% endif %}
+  background-color: #EAEAEA;
+  flex-shrink: 0;
 }
 
 footer p.text-muted {
-  color: {{ site.footer-text-col | default: "#777777" }} !important;
+  color: #777777 !important;
 }
 
 footer a {
-  color: {{ site.footer-link-col | default: "#404040" }};
+  color: #404040;
 }
 
 footer a:hover,
 footer a:focus {
-  color: {{ site.footer-hover-col | default: "#0085A1" }};
+  color: #0085A1;
 }
 
 footer .list-inline {
@@ -554,7 +559,7 @@ footer .footer-custom-content {
 
 @media (min-width: 768px) {
   footer {
-    padding: 3.125rem 0;
+    padding: 1.5rem 0;
   }
   footer .footer-links {
     font-size: 1.125rem;
@@ -598,7 +603,7 @@ footer .footer-custom-content {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: {{ site.hover-col | default: "#0085A1" }};
+  color: #0085A1;
 }
 
 .post-preview .post-title {
@@ -823,7 +828,7 @@ body.dark-mode .post-preview a:focus {
 }
 
 .blog-tags span {
-  color: {{ site.text-col | default: "#404040" }};
+  color: #404040;
   opacity: 0.8;
 }
 
@@ -832,7 +837,7 @@ body.dark-mode .post-preview a:focus {
 }
 
 .blog-tags a {
-  color: {{ site.text-col | default: "#404040" }};
+  color: #404040;
   text-decoration: none;
   padding: 0 0.3125rem;
   opacity: 0.8;
@@ -842,8 +847,8 @@ body.dark-mode .post-preview a:focus {
 
 .blog-tags a:hover {
   opacity: 1;
-  color: {{ site.text-col | default: "#404040" }};
-  border-color: {{ site.text-col | default: "#404040" }};
+  color: #404040;
+  border-color: #404040;
 }
 
 .post-preview .blog-tags {
@@ -1073,8 +1078,8 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 .pagination .page-item .page-link:hover,
 .pagination .page-item .page-link:focus {
   color: #FFF;
-  border: 1px solid {{ site.hover-col | default: "#0085A1" }};
-  background-color: {{ site.hover-col | default: "#0085A1" }};
+  border: 1px solid #0085A1;
+  background-color: #0085A1;
 }
 
 /* --- Tables --- */

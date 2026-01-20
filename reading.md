@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Currently Reading
 ---
 # Currently Reading
